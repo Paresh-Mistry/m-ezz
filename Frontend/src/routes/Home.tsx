@@ -18,7 +18,7 @@ const Home: React.FC = () => {
             {/* Dummy Home Page */}
 
             <div className="mx-auto min-h-screen flex flex-col items-center pt-20 relative px-4 text-center space-y-1.5">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-600">
+                <h1 className="text-4xl md:text-6xl font-bold text-cyan-600">
                     <span className="font-semibold">Introducing</span> M-Ezz
                 </h1>
 

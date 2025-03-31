@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
         <aside
             ref={sidebarRef}
             className={`w-70 shadow-sm ${md_sidebar ? 'md:w-55' : 'md:w-22'} pt-4 px-1 flex flex-col md:justify-between md:transition-[width] duration-300 md:rounded-none rounded-r-xl ease-in-out md:top-auto top-0 absolute h-screen z-10 ${isOpen ? 'translate-x-0' : '-translate-x-full'
-                } md:translate-x-0 md:relative  ${theme === 'light' ? 'bg-[#d9d9d080] text-black' : 'bg-[#1E1E1E] text-white shadow-gray-800'}`}
+                } md:translate-x-0 md:relative  ${theme === 'light' ? 'bg-[#E6E6E2] text-black' : 'bg-[#1E1E1E] text-white'}`}
         >
             <div className='space-y-7 sticky top-0 h-full min-h-0 flex-1 flex-col'>
                 <div className={`flex items-center px-2 ${md_sidebar ? 'justify-between' : 'justify-center'}`}>

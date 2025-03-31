@@ -1,22 +1,21 @@
 import { Menu } from 'lucide-react';
 import React, { useContext } from 'react';
 import { context } from '../Layout/Context';
-import { Link } from 'react-router-dom';
 
 export const Navbar: React.FC = () => {
 
-    const { toggle_sidebar } = useContext(context) ?? {};
+    const { toggle_sidebar , theme} = useContext(context) ?? {};
 
     return (
 
         <React.Fragment>
 
-            <header className="md:hidden visible bg-white border-b border-gray-200 p-4">
+            <header className={`${theme === 'light' ? 'bg-white text-black border-gray-200' : 'bg-[#1E1E1E] text-white border-none'} md:hidden visible border-b p-4`}>
                 <div className="max-w-5xl mx-auto flex justify-between items-center">
-                    <button className="visible text-gray-600 hover:text-gray-800 md:hidden" onClick={() => toggle_sidebar()}>
+                    <button className={`visible ${theme==="light" && "text-gray-600 hover:text-gray-800"} md:hidden`} onClick={() => toggle_sidebar()}>
                         <Menu />
                     </button>
-                    <Link to={'/'} className="text-xl font-semibold text-cyan-700">{"M-Ezz".toUpperCase()}</Link>
+                    {/* Authentication Avatar */}
                 </div>
             </header>
 

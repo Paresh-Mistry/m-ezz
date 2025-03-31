@@ -12,7 +12,7 @@ const About: React.FC = () => {
 
             {/* Dummy About Page */}
 
-            <div className="w-full min-h-screen flex flex-col items-center pt-20 relative px-2 text-center">
+            <div className="mx-auto min-h-screen flex flex-col items-center pt-20 relative px-2 text-center">
 
                 <h1 className="text-4xl md:text-6xl font-extrabold text-gray-600 bg-clip-text ">
                     About Perplexity AI

@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Layoutwrap from "../Layout/Layoutwrap";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
+import { context } from "../Layout/Context";
 
 const Home: React.FC = () => {
+
+    const {theme} = useContext(context)
 
     useEffect(() => {
         document.title = "Home"
@@ -14,17 +17,30 @@ const Home: React.FC = () => {
 
             {/* Dummy Home Page */}
 
-            <section className="bg-white mt-4 dark:bg-gray-900 w-full">
-                <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-                    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-700 md:text-5xl lg:text-6xl dark:text-white">Empowering Conversations with AI</h1>
-                    <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Experience the future of communication with our intelligent AI assistant—where innovation meets seamless interaction, unlocking insights and enhancing conversations effortlessly.</p>
-                    <div className="flex w-fit mx-auto flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                        <Link to="/chat" className="inline-flex justify-center gap-2 items-center py-2 md:py-3 px-3 md:px-5 text-base font-medium text-center rounded-lg bg-cyan-700 text-white hover:bg-cyan-800">
-                            Get Started with AI<ArrowRight size={18}/>
-                        </Link>
-                    </div>
+            <div className="mx-auto min-h-screen flex flex-col items-center pt-20 relative px-4 text-center space-y-1.5">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-600">
+                    <span className="font-semibold">Introducing</span> M-Ezz
+                </h1>
+
+                <p className="text-lg md:text-xl text-gray-500 max-w-3xl mt-4">
+                    Unlock the power of AI-driven insights! Our cutting-edge generative models provide
+                    real-time answers with unmatched precision.
+                </p>
+                <div className="flex flex-col md:flex-row md:gap-2">
+                    <Link
+                        to="/chat"
+                        className="mt-6 flex gap-2 w-fit mx-auto items-center px-4 py-2 border-cyan-700 border-2 text-cyan-700 font-semibold rounded-lg hover:border-cyan-900 transition duration-300"
+                    >
+                        Try M-Ezz <ArrowUpRight size={20} />
+                    </Link>
+                    <Link
+                        to="/about"
+                        className={`${theme==="light"?"text-black":"text-white"} mt-6 px-4 py-3 w-fit mx-auto flex gap-2 items-center font-semibold rounded-lg hover:text-cyan-700`}
+                    >
+                        Learn about M-Ezz <ChevronRight size={20} />
+                    </Link>
                 </div>
-            </section>
+            </div>
         </Layoutwrap>
     );
 };

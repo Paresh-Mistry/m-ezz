@@ -1,17 +1,20 @@
-import React from 'react'
-import Sidebar from '../components/Sidebar'
+import { useContext } from "react";
+import Sidebar from "../components/Sidebar";
+import { context } from "./Context";
 
-interface LayoutWrapperProps extends React.PropsWithChildren { }
+const Layoutwrap = ({ children }: { children: React.ReactNode }) => {
 
-const Layoutwrap: React.FC<LayoutWrapperProps> = ({ children }) => {
+    const { theme } = useContext(context)
+
     return (
-        <div className="flex flex-col md:flex-row w-full h-screen">
+        <div className={`flex flex-col md:flex-row w-full h-screen ${theme === 'light' ? 'bg-[#fefbfc] text-black' : 'bg-[#121212] text-[#E0E0E0]'}`}>
 
             <Sidebar />
+
             {children}
-
+            
         </div>
-    )
-}
+    );
+};
 
-export default Layoutwrap
+export default Layoutwrap;
